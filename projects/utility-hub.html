@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Utility Hub</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link back to main styles -->
+    <style>
+        /* Add specific styles for case study pages if needed */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+        }
+        .case-study-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .case-study-header img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .case-study-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        .meta-info {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .meta-info span {
+            margin-right: 15px;
+        }
+        .section-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .status.completed { color: #2ecc71; }
+        .status.wip { color: #f39c12; }
+        .play-store-link a {
+             color: var(--accent-color);
+             font-weight: bold;
+        }
+        .play-store-link a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="case-study-container">
+        <header class="case-study-header">
+            <!-- Placeholder image - replace with actual project image -->
+            <img src="../assets/project1.png" alt="Utility Hub Cover Image">
+            <h1>Utility Hub</h1>
+            <div class="meta-info">
+                <span>Published: <time datetime="YYYY-MM-DD">[Publication Date]</time></span>
+                <span>Author: Adarsh Kumar</span>
+            </div>
+        </header>
+
+        <section class="project-details">
+            <h2 class="section-heading">Project Description</h2>
+            <p>A multipurpose Android app designed to consolidate various common utilities into a single, convenient application. It includes tools like unit converters, text manipulation utilities, note-taking features, and reminders.</p>
+
+            <h2 class="section-heading">Pros and Cons</h2>
+            <h3>Pros:</h3>
+            <ul>
+                <li>Combines multiple tools, reducing the need for separate apps.</li>
+                <li>User-friendly interface designed with Jetpack Compose.</li>
+                <li>Offline functionality for most features.</li>
+            </ul>
+            <h3>Cons:</h3>
+            <ul>
+                <li>Some niche utility features might be missing compared to dedicated apps.</li>
+                <li>Initial version might have limited customization options.</li>
+            </ul>
+
+            <h2 class="section-heading">Tools and Frameworks Used</h2>
+            <ul>
+                <li>Kotlin</li>
+                <li>Jetpack Compose (UI Toolkit)</li>
+                <li>Android SDK</li>
+                <li>RoomDB (Local Data Persistence)</li>
+                <li>MVVM Architecture Pattern</li>
+                <li>Material Design Components</li>
+            </ul>
+
+            <h2 class="section-heading">Features and Functionalities</h2>
+            <ul>
+                <li>Unit Converter (Length, Weight, Temperature, etc.)</li>
+                <li>Text Utilities (Case Converter, Word Count)</li>
+                <li>Simple Note Pad</li>
+                <li>Reminder System</li>
+                <li>Clean and intuitive UI</li>
+            </ul>
+
+            <h2 class="section-heading">Future Enhancements</h2>
+            <ul>
+                <li>Adding more converter types (Currency, Data Size).</li>
+                <li>Implementing cloud backup for notes and reminders.</li>
+                <li>Adding theme customization options.</li>
+                <li>Calculator functionality.</li>
+            </ul>
+
+            <h2 class="section-heading">Play Store Link</h2>
+            <p class="play-store-link"><a href="#" target="_blank">Coming Soon</a></p>
+            <!-- Or if available: <p class="play-store-link"><a href="[Your Play Store Link]" target="_blank">View on Google Play</a></p> -->
+
+            <h2 class="section-heading">Project Status</h2>
+            <p><span class="status wip">🚧 Work In Progress</span></p>
+            <!-- Or: <p><span class="status completed">✅ Completed</span></p> -->
+
+            <h2 class="section-heading">Developer</h2>
+            <p>Adarsh Kumar</p>
+        </section>
+
+        <a href="../index.html#projects" class="back-link">&larr; Back to Portfolio</a>
+    </div>
+</body>
+</html>
