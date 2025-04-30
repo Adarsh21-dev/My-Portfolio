@@ -24,11 +24,11 @@ navLinksItems.forEach(item => {
 
 // Scroll to section when nav link is clicked
 navLinksItems.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         window.scrollTo({
             top: targetSection.offsetTop - 70,
             behavior: 'smooth'
@@ -45,13 +45,13 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '15px 0';
         navbar.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
     }
-    
+
     // Update active nav link based on scroll position
     updateActiveNavLink();
-    
+
     // Show/hide scroll to top button
     toggleScrollToTopButton();
-    
+
     // Animate elements on scroll
     animateOnScroll();
 });
@@ -59,7 +59,7 @@ window.addEventListener('scroll', () => {
 // Update active nav link based on scroll position
 function updateActiveNavLink() {
     let currentSection = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.offsetHeight;
@@ -67,7 +67,7 @@ function updateActiveNavLink() {
             currentSection = section.getAttribute('id');
         }
     });
-    
+
     navLinksItems.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
@@ -79,11 +79,11 @@ function updateActiveNavLink() {
 // Animate elements when they come into view
 function animateOnScroll() {
     const animateElements = document.querySelectorAll('.timeline-item, .project-card, .tool-item, .blog-card');
-    
+
     animateElements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.2;
-        
+
         if (elementPosition < screenPosition) {
             element.classList.add('fade-in');
         }
@@ -98,27 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
         updateActiveNavLink();
         toggleScrollToTopButton();
     }, 100);
-    
+
     // Contact form submission
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             // Here you would typically send the form data to a server
             // For demo purposes, we'll just show an alert
             alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-            
+
             // Reset form
             this.reset();
         });
     }
-    
+
     // Create placeholder images folder
     createPlaceholderImages();
 });
@@ -133,10 +133,10 @@ function createPlaceholderImages() {
 // Scroll to top functionality
 function toggleScrollToTopButton() {
     if (!scrollToTopBtn) return;
-    
+
     const footerPosition = footer.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
-    
+
     // Show button when user is near the footer
     if (footerPosition < windowHeight * 1.2) {
         scrollToTopBtn.classList.add('visible');

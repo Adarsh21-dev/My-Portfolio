@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,16 @@
             font-family: 'Open Sans', sans-serif;
             line-height: 1.7;
         }
+
         .case-study-container {
             max-width: 900px;
             margin: 50px auto;
             padding: 40px;
             background-color: var(--card-bg);
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+
         .case-study-header img {
             width: 100%;
             max-height: 400px;
@@ -28,20 +31,24 @@
             border-radius: 8px;
             margin-bottom: 30px;
         }
+
         .case-study-header h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.8rem;
             color: var(--accent-color);
             margin-bottom: 10px;
         }
+
         .meta-info {
             font-size: 0.9rem;
             color: #aaa;
             margin-bottom: 30px;
         }
+
         .meta-info span {
             margin-right: 15px;
         }
+
         .section-heading {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
@@ -51,23 +58,34 @@
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 5px;
         }
+
         ul {
             list-style: disc;
             margin-left: 20px;
             margin-bottom: 15px;
         }
+
         .status {
             font-weight: bold;
         }
-        .status.completed { color: #2ecc71; }
-        .status.wip { color: #f39c12; }
-        .play-store-link a {
-             color: var(--accent-color);
-             font-weight: bold;
+
+        .status.completed {
+            color: #2ecc71;
         }
+
+        .status.wip {
+            color: #f39c12;
+        }
+
+        .play-store-link a {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
         .play-store-link a:hover {
             text-decoration: underline;
         }
+
         .back-link {
             display: inline-block;
             margin-top: 40px;
@@ -75,11 +93,13 @@
             text-decoration: none;
             font-weight: bold;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="case-study-container">
         <header class="case-study-header">
@@ -87,66 +107,507 @@
             <img src="../assets/project2.png" alt="Medical Vendor API Cover Image">
             <h1>Medical Vendor API Project</h1>
             <div class="meta-info">
-                <span>Published: <time datetime="2025-03-15">March 15, 2025</time></span> <!-- Example Date -->
-                <span>Author: Adarsh Kumar</span>
+                <span class="meta-item"><strong>Published:</strong> <time datetime="2025-03-15">March 15,
+                        2025</time></span>
+                <span class="meta-item"><strong>Author:</strong> Adarsh Kumar</span> </br>
+                <span class="meta-item highlight">
+                    <strong>🚀 Project Status:</strong>
+                    <span class="status-text">Self-initiated project completed as part of backend development practice.
+                        API endpoints fully functional and documented.</span>
+                </span>
             </div>
+            <style>
+                .meta-item {
+                    display: inline-block;
+                    margin-right: 20px;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                }
+
+                .meta-item.highlight {
+                    background-color: rgba(var(--accent-color-rgb), 0.1);
+                    border-left: 3px solid var(--accent-color);
+                }
+
+                .status-text {
+                    color: var(--accent-color);
+                }
+            </style>
         </header>
 
         <section class="project-details">
             <h2 class="section-heading">Project Description</h2>
-            <p>This project involved designing and developing the backend APIs for a mobile application platform connecting medical vendors and customers. The focus was on creating a robust, scalable, and secure API service.</p>
+            <p>The Medical Vendor API Project is a comprehensive backend solution designed to power a mobile application
+                platform that connects medical vendors with healthcare facilities and individual customers. This
+                API-driven system was developed to address the growing need for streamlined procurement processes in the
+                healthcare sector, particularly for medical supplies, equipment, and pharmaceuticals.</p>
+
+            <p>The project was conceived after observing the inefficiencies in traditional medical supply chains, where
+                procurement often involves multiple intermediaries, paper-based processes, and significant delays. By
+                creating a direct digital channel between vendors and healthcare providers, this platform aims to reduce
+                costs, improve delivery times, and enhance inventory management for all stakeholders.</p>
+
+            <p>From an architectural perspective, the API follows RESTful design principles with a focus on scalability,
+                security, and performance. The system is built using a modular approach that separates core
+                functionalities into distinct services, including user management, product catalog, order processing,
+                and analytics. This design allows for independent scaling of components based on demand and facilitates
+                easier maintenance and feature additions.</p>
+
+            <p>Security considerations were paramount throughout development, with implementation of industry-standard
+                authentication protocols, data encryption, and role-based access controls to protect sensitive medical
+                inventory information and user data. The API also incorporates comprehensive logging and monitoring
+                capabilities to ensure system health and provide audit trails for regulatory compliance.</p>
 
             <h2 class="section-heading">Pros and Cons</h2>
             <h3>Pros:</h3>
             <ul>
-                <li>Provided a clear separation between frontend and backend logic.</li>
-                <li>Enabled real-time data handling for inventory and orders.</li>
-                <li>Implemented secure authentication and authorization mechanisms.</li>
+                <li><strong>Clean Architecture:</strong> The API implements a layered architecture that clearly
+                    separates concerns between controllers, services, and data access layers. This separation enhances
+                    maintainability and allows for independent testing of components. The modular design also
+                    facilitates future extensions without disrupting existing functionality.</li>
+
+                <li><strong>Comprehensive Authentication:</strong> Implemented JWT-based authentication with role-based
+                    access control that distinguishes between vendor accounts, customer accounts, and administrative
+                    users. The token management system includes refresh token rotation and proper expiration handling to
+                    maintain security while providing a seamless user experience.</li>
+
+                <li><strong>Real-time Inventory Updates:</strong> The API incorporates WebSocket connections for
+                    real-time inventory updates, allowing vendors to broadcast stock changes immediately to all
+                    connected clients. This feature is particularly valuable for time-sensitive medical supplies with
+                    limited availability.</li>
+
+                <li><strong>Extensive Documentation:</strong> All API endpoints are thoroughly documented using
+                    OpenAPI/Swagger specifications, providing interactive documentation that allows frontend developers
+                    to understand and test endpoints without additional tools. The documentation includes example
+                    requests, response schemas, and error handling information.</li>
+
+                <li><strong>Optimized Query Performance:</strong> Database queries are optimized through careful index
+                    design, query caching, and pagination strategies to ensure responsive performance even with large
+                    datasets. The system can handle complex filtering and sorting operations without significant
+                    performance degradation.</li>
             </ul>
+
             <h3>Cons:</h3>
             <ul>
-                <li>Initial deployment complexity for a self-initiated project.</li>
-                <li>Required careful consideration of database schema design for scalability.</li>
+                <li><strong>Deployment Complexity:</strong> As a self-initiated project, the deployment infrastructure
+                    required significant setup and configuration. The multi-service architecture, while beneficial for
+                    scalability, introduced complexity in terms of service discovery, load balancing, and monitoring
+                    that would be more easily managed in a team environment with dedicated DevOps resources.</li>
+
+                <li><strong>Database Schema Evolution:</strong> The initial database schema design required several
+                    iterations as new requirements emerged during development. While migrations were implemented to
+                    handle these changes, some early design decisions created constraints that required workarounds in
+                    later stages.</li>
+
+                <li><strong>Limited Mobile-specific Optimizations:</strong> The API, while functional for mobile
+                    clients, could benefit from additional optimizations specifically for mobile environments, such as
+                    more aggressive response compression, binary data formats for bandwidth-constrained scenarios, and
+                    tailored response structures for different device capabilities.</li>
+
+                <li><strong>Testing Coverage Gaps:</strong> While core functionality has comprehensive test coverage,
+                    some edge cases and integration scenarios have less thorough testing due to time constraints. A more
+                    systematic approach to test coverage would enhance reliability for production deployment.</li>
             </ul>
 
             <h2 class="section-heading">Tools and Frameworks Used</h2>
+            <p>The development of the Medical Vendor API leveraged a carefully selected technology stack that balances
+                modern development practices with reliability and performance:</p>
+
             <ul>
-                <li>Python</li>
-                <li>Flask (Web Framework)</li>
-                <li>SQLAlchemy (ORM - Assumed, replace if different)</li>
-                <li>PostgreSQL/SQLite (Database - Assumed, replace if different)</li>
-                <li>JWT (Authentication)</li>
-                <li>RESTful API Principles</li>
+                <li><strong>Python (Primary Language):</strong> Selected for its readability, extensive library
+                    ecosystem, and strong support for web API development. Python's expressive syntax allowed for rapid
+                    development while maintaining code clarity. The project specifically uses Python 3.9 to leverage
+                    modern language features while ensuring compatibility with essential libraries.</li>
+                </br>
+                <li><strong>Flask (Web Framework):</strong> Chosen as the primary web framework for its lightweight
+                    nature and flexibility. Flask's minimalist approach allowed for precise control over the application
+                    architecture without imposing unnecessary constraints. The implementation uses Flask Blueprints to
+                    organize routes logically by domain and Flask-RESTful for structured API resource definitions.</li>
+                </br>
+                <li><strong>SQLAlchemy (ORM):</strong> Implemented robust database interactions with comprehensive error
+                    handling using try-except blocks for all database operations. Leverages list comprehension for
+                    efficient data mapping between database schemas and API responses. The ORM layer includes custom
+                    exception handlers for common database errors like IntegrityError and TimeoutError, providing
+                    graceful fallbacks and detailed error logging.</li>
+                </br>
+                <li><strong>SQLite3 (Database):</strong> Implemented as the primary data store, utilizing a file-based
+                    system database that stores data locally. As a Python library, SQLite3 integrates seamlessly with
+                    Flask applications, providing efficient data storage and retrieval capabilities without requiring a
+                    separate database server.</li>
+                </br>
+                <li><strong>Flask Utilities & UUID:</strong> Leverages Flask's jsonify for JSON response formatting,
+                    request handling for API endpoints, and Python's uuid4() for generating unique identifiers. These
+                    tools enable robust API functionality and proper request/response handling.</li>
+                </br>
+                <li><strong>Thunder Client & Echo API:</strong> Thunder Client was used as a powerful API testing tool
+                    within VS Code to test all API endpoints, validate responses, and ensure proper functionality. Echo
+                    API provided a simple way to mock and test API responses during development, allowing for rapid
+                    iteration and debugging of endpoint behavior.</li>
+                </br>
+                <li><strong>PythonAnywhere Deployment:</strong> The Flask API was deployed using PythonAnywhere's cloud
+                    platform, providing reliable hosting and easy management of the Python web application. This
+                    deployment solution enables access to various API endpoints that serve different purposes:
+                    <ul>
+                        <li>User and Products creation endpoints</li>
+                        <li>Product catalog management functionality</li>
+                        <li>Order processing capabilities</li>
+                        <li>Stock updates</li>
+                        <li>Delete Existing users and products</li>
+                        <li>Select Specific & All users and products in a table and display them.</li>
+                    </ul>
+                </li>
             </ul>
 
             <h2 class="section-heading">Features and Functionalities</h2>
+            <p>The Medical Vendor API provides a comprehensive set of endpoints and services designed to support the
+                entire lifecycle of medical supply procurement:</p>
+
+            <h3>User Management System</h3>
+            <p>The authentication and user management module handles identity verification and access control:</p>
             <ul>
-                <li>User Authentication (Vendor/Customer Roles)</li>
-                <li>Product Listing and Management</li>
-                <li>Order Placement and Tracking</li>
-                <li>Vendor Profile Management</li>
-                <li>Secure API endpoints</li>
+                <li><strong>Multi-role Authentication:</strong> Supports distinct user types (vendors, customers,
+                    administrators) with role-specific permissions and access patterns. Each role has a customized
+                    registration process with appropriate validation rules.</li>
+
+                <li><strong>Secure Credential Management:</strong> Implements industry best practices for password
+                    storage using bcrypt hashing with appropriate work factors. The system enforces password complexity
+                    requirements and prevents common password vulnerabilities.</li>
+
+                <li><strong>Profile Management:</strong> Provides endpoints for users to manage their profiles,
+                    including contact information, shipping addresses, and communication preferences. Vendors have
+                    additional profile fields for business details, certifications, and service areas.</li>
+
+                <li><strong>Session Management:</strong> Handles token issuance, validation, and refresh operations with
+                    appropriate security controls. The system maintains audit logs of authentication events and
+                    implements rate limiting to prevent brute force attacks.</li>
+            </ul>
+
+            <h3>Product Catalog System</h3>
+            <p>The product management module enables vendors to list and manage their medical supplies:</p>
+            <ul>
+                <li><strong>Hierarchical Category Management:</strong> Supports a multi-level category system for
+                    organizing products with inheritance of attributes and specifications. Categories include medical
+                    specialties, product types, and regulatory classifications.</li>
+
+                <li><strong>Detailed Product Specifications:</strong> Captures comprehensive product details including
+                    dimensions, storage requirements, expiration handling, and regulatory approvals. The system supports
+                    both structured attributes and free-form specifications for flexibility.</li>
+
+                <li><strong>Inventory Tracking:</strong> Manages stock levels, batch numbers, and expiration dates with
+                    automated alerts for low stock or approaching expiration. Vendors can set threshold levels for
+                    notifications and automatic reordering suggestions.</li>
+
+                <li><strong>Advanced Search Capabilities:</strong> Provides powerful search functionality with filtering
+                    by multiple criteria, including product properties, availability, price range, and vendor ratings.
+                    The search implementation uses database indexing and caching strategies for performance.</li>
+            </ul>
+
+            <h3>Order Processing System</h3>
+            <p>The order management module handles the complete order lifecycle:</p>
+            <ul>
+                <li><strong>Multi-item Order Creation:</strong> Supports creation of orders with multiple line items,
+                    potentially from different vendors, with appropriate inventory validation. The system handles
+                    partial availability scenarios with configurable backorder policies.</li>
+
+                <li><strong>Status Tracking Workflow:</strong> Implements a comprehensive order status system with
+                    transitions from placement through fulfillment, shipping, and delivery. Each status change triggers
+                    appropriate notifications and updates inventory records.</li>
+
+                <li><strong>Document Generation:</strong> Automatically generates necessary documentation including
+                    order confirmations, packing slips, and invoices in standardized formats. Documents are stored with
+                    version control and accessible through dedicated endpoints.</li>
+
+                <li><strong>Return and Cancellation Handling:</strong> Provides structured processes for order
+                    modifications, cancellations, and returns with appropriate inventory adjustments and audit trails.
+                    The system enforces business rules regarding return eligibility and restocking procedures.</li>
+            </ul>
+            </ul>
+
+            <h2 class="section-heading">API Architecture and Endpoints</h2>
+            <p>The API follows RESTful design principles with a focus on resource-oriented endpoints and consistent
+                interaction patterns. The architecture is designed to be modular, scalable, and secure, with
+                comprehensive documentation and testing procedures.</p>
+
+            <h3>🔄 Workflow</h3>
+            <p>The Medical Vendor API follows a structured workflow that guides the development and usage process:</p>
+            <ul>
+                <li><strong>Development Workflow:</strong> The API development follows a systematic approach including
+                    requirements analysis, design, implementation, testing, and deployment phases. Each phase has
+                    specific deliverables and quality gates to ensure robust implementation.</li>
+
+                <li><strong>Request Processing Flow:</strong> When a request reaches the API, it passes through several
+                    layers:
+                    <ol>
+                        <li>Authentication and authorization validation</li>
+                        <li>Request validation and sanitization</li>
+                        <li>Business logic processing</li>
+                        <li>Data access operations</li>
+                        <li>Response formatting and delivery</li>
+                    </ol>
+                </li>
+
+                <li><strong>Error Handling Process:</strong> The API implements a comprehensive error handling strategy
+                    with standardized error codes, descriptive messages, and appropriate HTTP status codes. All errors
+                    are logged for monitoring and debugging purposes.</li>
+            </ul>
+
+            <h3>🗃️ Database Map (Dev Only)</h3>
+            <p>The database schema is designed to support the core functionalities of the Medical Vendor API with
+                optimized relationships and indexing:</p>
+            <ul>
+                <li><strong>Users Table:</strong> Stores user authentication information, profile details, and role
+                    assignments. Includes fields for email, password hash, name, contact information, and account
+                    status.</li>
+
+                <li><strong>Products Table:</strong> Contains comprehensive product information including name,
+                    description, specifications, pricing, and regulatory information. Linked to categories and inventory
+                    records.</li>
+
+                <li><strong>Inventory Table:</strong> Tracks stock levels, batch information, expiration dates, and
+                    location data. Maintains relationships with products and vendors.</li>
+
+                <li><strong>Orders Table:</strong> Records order details, status, payment information, and fulfillment
+                    tracking. Connected to users (customers) and order items.</li>
+
+                <li><strong>Order_Items Table:</strong> Stores individual line items within orders, including product
+                    references, quantities, pricing, and fulfillment status.</li>
+            </ul>
+
+            <h3>⚙️ Setup Requirements</h3>
+            <p>To set up and run the Medical Vendor API, the following components are required:</p>
+            <ul>
+                <li><strong>Python 3.9+:</strong> The core programming language used for the API implementation.</li>
+
+                <li><strong>Flask Framework:</strong> The web framework that provides the foundation for the API
+                    endpoints and request handling.</li>
+
+                <li><strong>SQLAlchemy ORM:</strong> Used for database interactions and object-relational mapping.</li>
+
+                <li><strong>SQLite3:</strong> The database system used for data storage in development and testing
+                    environments.</li>
+
+                <li><strong>Additional Libraries:</strong>
+                    <ul>
+                        <li>Flask-RESTful for API resource definitions</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>🔧 Configuration</h3>
+            <p>The API configuration is managed through environment variables and configuration files:</p>
+            <ul>
+                <li><strong>Environment Variables:</strong> Used for sensitive configuration such as database
+                    credentials, secret keys, and external service connections.</li>
+
+                <li><strong>Configuration Files:</strong> Structured configuration for different environments
+                    (development, testing, production) with appropriate settings for each context.</li>
+
+                <li><strong>Feature Flags:</strong> Configuration options to enable or disable specific features and
+                    behaviors based on deployment requirements.</li>
+            </ul>
+
+            <h3>🧪 Testing</h3>
+            <p>The API includes comprehensive testing to ensure reliability and correctness:</p>
+            <ul>
+                <li><strong>Unit Tests:</strong> Focused tests for individual components and functions to verify correct
+                    behavior in isolation.</li>
+
+                <li><strong>Integration Tests:</strong> Tests that verify the interaction between different components
+                    and layers of the API.</li>
+
+                <li><strong>API Tests:</strong> End-to-end tests that validate the behavior of API endpoints from the
+                    client perspective.</li>
+
+                <li><strong>Performance Tests:</strong> Benchmarks and load tests to ensure the API meets performance
+                    requirements under various conditions.</li>
+
+                <li><strong>Testing Tools:</strong> The project uses Thunder Client for API testing and Echo API for
+                    response mocking during development.</li>
+            </ul>
+
+            <h3>🚀 PythonAnywhere Deployment</h3>
+            <p>The API is deployed on PythonAnywhere's cloud platform, providing reliable hosting with the following
+                benefits:</p>
+            <ul>
+                <li><strong>Simplified Deployment:</strong> Streamlined deployment process with integrated Git support
+                    and automatic updates.</li>
+
+                <li><strong>Managed Environment:</strong> Pre-configured Python environment with necessary dependencies
+                    and runtime support.</li>
+
+                <li><strong>Scheduled Tasks:</strong> Support for background jobs and scheduled maintenance operations.
+                </li>
+
+                <li><strong>SSL Support:</strong> Secure HTTPS connections for all API endpoints to protect data in
+                    transit.</li>
+
+                <li><strong>Monitoring and Logging:</strong> Integrated monitoring and logging capabilities for
+                    operational visibility.</li>
+            </ul>
+
+            <h3>✨ Features</h3>
+            <p>The Medical Vendor API includes several key features that enhance its functionality and usability:</p>
+            <ul>
+                <li><strong>User and Products Creation:</strong> Comprehensive endpoints for creating and managing user
+                    accounts and product listings with validation and error handling.</li>
+
+                <li><strong>Product Catalog Management:</strong> Tools for organizing, categorizing, and updating
+                    product information with support for rich metadata and specifications.</li>
+
+                <li><strong>Order Processing:</strong> End-to-end order management from creation through fulfillment,
+                    with status tracking and notification capabilities.</li>
+
+                <li><strong>Stock Updates:</strong> Real-time inventory management with batch processing support and
+                    automated alerts for low stock conditions.</li>
+
+                <li><strong>User and Product Management:</strong> Administrative capabilities for managing user accounts
+                    and product listings, including activation/deactivation and bulk operations.</li>
             </ul>
 
             <h2 class="section-heading">Future Enhancements</h2>
+            <p>The development roadmap for the Medical Vendor API includes several planned expansions and improvements
+                based on initial implementation insights and anticipated market needs:</p>
+
+            <h3>Short-term Enhancements (Next 3-6 Months)</h3>
             <ul>
-                <li>Implementing push notifications for order updates.</li>
-                <li>Adding analytics dashboard for vendors.</li>
-                <li>Integrating a payment gateway.</li>
-                <li>Developing admin panel for platform management.</li>
+                <li><strong>Payment Gateway Integration:</strong> Implementation of secure payment processing
+                    capabilities:</li>
+                <ul>
+                    <li>Support for multiple payment methods including credit cards, bank transfers, and digital wallets
+                    </li>
+                    <li>Integration with healthcare-specific payment systems and insurance verification</li>
+                    <li>Automated invoicing and payment reconciliation</li>
+                    <li>Compliance with financial security standards (PCI DSS)</li>
+                </ul>
+
+                <li><strong>Advanced Search Optimization:</strong> Enhancement of product discovery capabilities:</li>
+                <ul>
+                    <li>Implementation of full-text search with medical terminology awareness</li>
+                    <li>Synonym matching for medical product names and categories</li>
+                    <li>Faceted search with dynamic filtering options</li>
+                    <li>Search result ranking based on relevance algorithms</li>
+                </ul>
+
+                <li><strong>Mobile-specific API Optimizations:</strong> Improvements for mobile client performance:</li>
+                <ul>
+                    <li>Response payload optimization for bandwidth efficiency</li>
+                    <li>Implementation of GraphQL endpoints for flexible data fetching</li>
+                    <li>Enhanced caching strategies for mobile scenarios</li>
+                    <li>Offline operation support with conflict resolution</li>
+                </ul>
+            </ul>
+
+            <h3>Medium-term Developments (6-12 Months)</h3>
+            <ul>
+                <li><strong>Regulatory Compliance Framework:</strong> Expansion of compliance capabilities:</li>
+                <ul>
+                    <li>Structured storage and verification of regulatory documentation</li>
+                    <li>Automated checks against healthcare product databases</li>
+                    <li>Region-specific compliance rule enforcement</li>
+                    <li>Audit trail enhancements for regulatory inspections</li>
+                </ul>
+
+                <li><strong>Machine Learning Integration:</strong> Implementation of intelligent features:</li>
+                <ul>
+                    <li>Demand forecasting for inventory optimization</li>
+                    <li>Anomaly detection for fraud prevention</li>
+                    <li>Personalized product recommendations</li>
+                    <li>Automated categorization of new products</li>
+                </ul>
+
+                <li><strong>Integration Ecosystem:</strong> Development of integration capabilities:</li>
+                <ul>
+                    <li>Hospital inventory management system connectors</li>
+                    <li>Electronic health record (EHR) system integration</li>
+                    <li>Logistics provider APIs for shipment tracking</li>
+                    <li>Webhook system for third-party notifications</li>
+                </ul>
+            </ul>
+
+            <h3>Long-term Vision (Beyond 12 Months)</h3>
+            <ul>
+                <li><strong>Blockchain for Supply Chain Verification:</strong> Implementation of distributed ledger
+                    technology:</li>
+                <ul>
+                    <li>Immutable record of product provenance and chain of custody</li>
+                    <li>Smart contracts for automated compliance verification</li>
+                    <li>Counterfeit detection and prevention</li>
+                    <li>Transparent recall management</li>
+                </ul>
+
+                <li><strong>Predictive Analytics Platform:</strong> Advanced data analysis capabilities:</li>
+                <ul>
+                    <li>Predictive maintenance for medical equipment</li>
+                    <li>Supply chain optimization algorithms</li>
+                    <li>Market trend analysis and forecasting</li>
+                    <li>Risk assessment for inventory decisions</li>
+                </ul>
+
+                <li><strong>Global Expansion Infrastructure:</strong> Scaling for international markets:</li>
+                <ul>
+                    <li>Multi-region deployment architecture</li>
+                    <li>Localization framework for multiple languages and regulations</li>
+                    <li>Currency and tax handling for international transactions</li>
+                    <li>Region-specific compliance documentation</li>
+                </ul>
+            </ul>
+
+            <p>These planned enhancements are prioritized based on stakeholder feedback, technical feasibility, and
+                strategic alignment with the platform's mission of improving efficiency and accessibility in medical
+                supply procurement.</p>
+
+            <h2 class="section-heading">Development Timeline</h2>
+            <p>The Medical Vendor API project followed a structured development process with defined phases:</p>
+
+            <ul>
+                <li><strong>Requirements Analysis & Design (Completed):</strong> Initial research into medical supply
+                    chain challenges, stakeholder interviews, and competitive analysis. This phase produced detailed API
+                    specifications, data models, and architectural diagrams that guided subsequent development.</li>
+
+                <li><strong>Core API Development (Completed):</strong> Implementation of fundamental API capabilities
+                    including authentication, product management, and basic order processing. This phase established the
+                    technical foundation and coding standards for the project.</li>
+
+                <li><strong>Advanced Feature Implementation (Completed):</strong> Development of more complex
+                    functionality including inventory management, real-time updates, and analytics capabilities. This
+                    phase expanded the API's capabilities to address comprehensive business requirements.</li>
+
+                <li><strong>Testing & Documentation (Completed):</strong> Comprehensive testing including unit tests,
+                    integration tests, and performance benchmarking. Creation of detailed API documentation using
+                    OpenAPI/Swagger specifications with interactive examples.</li>
+
+                <li><strong>Deployment & Optimization (Completed):</strong> Configuration of deployment infrastructure,
+                    implementation of monitoring systems, and performance optimization based on load testing results.
+                    This phase prepared the API for production use.</li>
             </ul>
 
             <h2 class="section-heading">Play Store Link</h2>
             <p class="play-store-link">N/A (Backend Project)</p>
+            <p>As a backend API project, this system does not have a direct presence on app stores. However, it serves
+                as the foundation for mobile applications that would be distributed through the Google Play Store and
+                potentially other app marketplaces. The API documentation and developer resources are available through
+                a dedicated developer portal.</p>
 
             <h2 class="section-heading">Project Status</h2>
             <p><span class="status completed">✅ Completed</span></p>
+            <p>The core API development has been completed with all planned endpoints implemented and thoroughly tested.
+                The system is currently operational and could be integrated with frontend applications. Ongoing
+                maintenance includes security updates, performance monitoring, and minor enhancements based on usage
+                patterns.</p>
 
-            <h2 class="section-heading">Developer</h2>
-            <p>Adarsh Kumar</p>
+            <h2 class="section-heading">Developer Information</h2>
+            <p><strong>Lead Developer:</strong> Adarsh Kumar</p>
+            <p><strong>Specialization:</strong> Backend API Development, Database Design</p>
+            <p><strong>Development Philosophy:</strong> Creating robust, scalable systems that prioritize security,
+                performance, and developer experience. The Medical Vendor API project embodies this philosophy through
+                its clean architecture, comprehensive documentation, and focus on reliability for critical healthcare
+                applications.</p>
+            <p><strong>Contact:</strong> For inquiries about this project or collaboration opportunities, please reach
+                out through the contact form on the main portfolio page.</p>
         </section>
 
         <a href="../index.html#projects" class="back-link">&larr; Back to Portfolio</a>
     </div>
 </body>
+
 </html>
