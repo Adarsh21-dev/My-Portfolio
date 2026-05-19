@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Adarsh Kumar</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link back to main styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Premium Case Study Template styling */
+        :root {
+            --glass-bg: rgba(25, 25, 25, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: rgba(0, 0, 0, 0.4);
+            --text-muted: #a0aec0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        .case-study-hero {
+            position: relative;
+            padding: 100px 0 60px 0;
+            background: linear-gradient(180deg, rgba(26, 188, 156, 0.1) 0%, rgba(18, 18, 18, 0) 100%);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .btn-back-floating {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-back-floating:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+            box-shadow: 0 12px 30px rgba(26, 188, 156, 0.2);
+            border-color: rgba(26, 188, 156, 0.4);
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        /* Glassmorphic Cards */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px var(--glass-shadow);
+        }
+
+        .sidebar-card {
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        /* Cover Image styling */
+        .cover-image-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .cover-image-container img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .cover-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Meta header details */
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .case-study-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* Markdown Rendered Content Styles */
+        .markdown-body h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 40px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .markdown-body h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .markdown-body p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+        }
+
+        .markdown-body ul, .markdown-body ol {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .markdown-body li {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+        }
+
+        .markdown-body strong {
+            color: #ffffff;
+        }
+
+        /* Custom Table Styling in Markdown */
+        .markdown-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        .markdown-body th, .markdown-body td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .markdown-body th {
+            background: rgba(26, 188, 156, 0.1);
+            color: var(--accent-color);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .markdown-body tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Sidebar Elements */
+        .sidebar-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-item {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .sidebar-value {
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.25);
+        }
+
+        .tech-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tech-chip {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .tech-chip:hover {
+            background: rgba(26, 188, 156, 0.15);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .sidebar-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-btn-primary {
+            background: var(--accent-color);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+        }
+
+        .sidebar-btn-primary:hover {
+            background: var(--dark-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 188, 156, 0.5);
+            color: #ffffff;
+        }
+
+        .sidebar-btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--glass-border);
+        }
+
+        .sidebar-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Loading spinner */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(26, 188, 156, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-card {
+                position: static;
+            }
+            .btn-back-floating {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            .case-study-hero {
+                padding-top: 100px;
+            }
+            .case-study-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Back Button -->
+    <a href="../index.html#projects" class="btn-back-floating">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p style="font-family: 'Montserrat', sans-serif; color: var(--accent-color);">Loading Case Study...</p>
+    </div>
+
+    <!-- Main Content Grid -->
+    <main class="container" style="margin-top: 40px;">
+        <div class="case-study-grid">
+            
+            <!-- Left Side: Case Study Content -->
+            <article class="glass-panel">
+                <header>
+                    <div class="header-meta">
+                        <span id="meta-author"><i class="far fa-user"></i> Adarsh Kumar</span>
+                        <span id="meta-date"><i class="far fa-calendar"></i> May 2025</span>
+                    </div>
+                    <h1 class="case-study-title" id="case-study-title">Project Title</h1>
+                    <p class="case-study-subtitle" id="case-study-subtitle">Project tagline or description overview.</p>
+                </header>
+
+                <!-- Project Cover Image -->
+                <div class="cover-image-container">
+                    <img id="cover-image" src="../assets/project1.png" alt="Project Cover Image">
+                </div>
+
+                <!-- Markdown Content Rendered Here -->
+                <div class="markdown-body" id="markdown-content">
+                    <!-- Dynamic Markdown content gets loaded here -->
+                </div>
+            </article>
+
+            <!-- Right Side: Sidebar Meta Card -->
+            <aside class="glass-panel sidebar-card">
+                <h2 class="sidebar-title">Project Details</h2>
+                
+                <div class="sidebar-item">
+                    <div class="sidebar-label">Status</div>
+                    <div class="sidebar-value">
+                        <span class="status-badge" id="status-badge">Completed</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <div class="sidebar-label">Technologies Used</div>
+                    <div class="tech-chips" id="tech-chips">
+                        <!-- Chips loaded dynamically -->
+                    </div>
+                </div>
+
+                <div class="sidebar-item">
+                    <div class="sidebar-label">GitHub Codebase</div>
+                    <a href="#" target="_blank" class="sidebar-btn sidebar-btn-primary" id="github-btn">
+                        <i class="fab fa-github"></i> View Repository
+                    </a>
+                </div>
+
+                <div class="sidebar-item" id="playstore-container" style="display: none;">
+                    <div class="sidebar-label">Play Store</div>
+                    <a href="#" target="_blank" class="sidebar-btn sidebar-btn-secondary" id="playstore-btn">
+                        <i class="fab fa-google-play"></i> Get It on Play Store
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <div class="sidebar-label">Need a Developer?</div>
+                    <a href="../index.html#contact" class="sidebar-btn sidebar-btn-secondary" style="border-color: rgba(26,188,156,0.3); color: var(--accent-color);">
+                        <i class="far fa-envelope"></i> Hire Me Now
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Marked JS CDN for parsing Markdown client-side -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // Simple YAML-like front matter parser
+        function parseFrontMatter(mdContent) {
+            const lines = mdContent.split('\n');
+            const frontMatter = {};
+            let markdownBody = '';
+            
+            if (lines[0].trim() === '---') {
+                let i = 1;
+                while (i < lines.length && lines[i].trim() !== '---') {
+                    const line = lines[i];
+                    const colonIndex = line.indexOf(':');
+                    if (colonIndex > -1) {
+                        const key = line.slice(0, colonIndex).trim();
+                        let value = line.slice(colonIndex + 1).trim();
+                        
+                        // Parse arrays if they look like ["A", "B"]
+                        if (value.startsWith('[') && value.endsWith(']')) {
+                            try {
+                                value = JSON.parse(value.replace(/'/g, '"'));
+                            } catch (e) {
+                                // fallback to string
+                            }
+                        }
+                        frontMatter[key] = value;
+                    }
+                    i++;
+                }
+                markdownBody = lines.slice(i + 1).join('\n');
+            } else {
+                markdownBody = mdContent;
+            }
+            
+            return { metadata: frontMatter, body: markdownBody };
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Get URL parameter for the project
+            const urlParams = new URLSearchParams(window.location.search);
+            const project = urlParams.get('project');
+
+            if (!project) {
+                renderError("Project Parameter Missing", "Please select a valid project case study from the portfolio homepage.");
+                return;
+            }
+
+            try {
+                // Fetch the markdown file from the projects folder
+                const response = await fetch(`./${project}.md`);
+                
+                if (!response.ok) {
+                    throw new Error(`Could not load the markdown file projects/${project}.md`);
+                }
+
+                const mdContent = await response.text();
+
+                // Parse Front Matter (metadata) and body
+                const { metadata, body } = parseFrontMatter(mdContent);
+
+                // Populate dynamic header and page metadata
+                document.title = `${metadata.title || "Case Study"} | Adarsh Kumar`;
+                document.getElementById('case-study-title').innerText = metadata.title || "Project Case Study";
+                document.getElementById('case-study-subtitle').innerText = metadata.subtitle || "";
+                
+                if (metadata.date) {
+                    document.getElementById('meta-date').innerHTML = `<i class="far fa-calendar"></i> ${metadata.date}`;
+                }
+                if (metadata.author) {
+                    document.getElementById('meta-author').innerHTML = `<i class="far fa-user"></i> ${metadata.author}`;
+                }
+
+                // Render cover image
+                if (metadata.cover_image) {
+                    document.getElementById('cover-image').src = metadata.cover_image;
+                    document.getElementById('cover-image').alt = `${metadata.title} Cover Image`;
+                }
+
+                // Render status badge
+                const statusBadge = document.getElementById('status-badge');
+                if (metadata.status) {
+                    statusBadge.innerText = metadata.status;
+                    statusBadge.className = `status-badge status-${metadata.status_color || 'completed'}`;
+                }
+
+                // Render tech chips
+                const techChipsContainer = document.getElementById('tech-chips');
+                techChipsContainer.innerHTML = '';
+                if (metadata.tools && Array.isArray(metadata.tools)) {
+                    metadata.tools.forEach(tool => {
+                        const chip = document.createElement('span');
+                        chip.className = 'tech-chip';
+                        chip.innerText = tool;
+                        techChipsContainer.appendChild(chip);
+                    });
+                }
+
+                // Render GitHub Link
+                const githubBtn = document.getElementById('github-btn');
+                if (metadata.github && metadata.github !== "N/A" && metadata.github !== "N/A (Desktop Application)") {
+                    githubBtn.href = metadata.github;
+                    githubBtn.style.display = 'flex';
+                } else {
+                    githubBtn.parentElement.style.display = 'none'; // hide item
+                }
+
+                // Render Play Store Link
+                const playstoreContainer = document.getElementById('playstore-container');
+                const playstoreBtn = document.getElementById('playstore-btn');
+                if (metadata.playstore && metadata.playstore !== "N/A" && metadata.playstore !== "N/A (Desktop Application)") {
+                    playstoreBtn.href = metadata.playstore;
+                    playstoreContainer.style.display = 'block';
+                }
+
+                // Convert markdown body to HTML and inject it
+                const htmlContent = marked.parse(body);
+                document.getElementById('markdown-content').innerHTML = htmlContent;
+
+            } catch (error) {
+                console.error(error);
+                renderError("Case Study Not Found", `We couldn't load the requested project case study file projects/${project}.md. Make sure it exists and try again.`);
+            } finally {
+                // Remove loading screen
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        });
+
+        function renderError(title, message) {
+            document.getElementById('case-study-title').innerText = title;
+            document.getElementById('case-study-subtitle').innerText = message;
+            document.getElementById('cover-image').style.display = 'none';
+            document.getElementById('markdown-content').innerHTML = `
+                <div style="text-align: center; padding: 40px 20px; border: 1px dashed rgba(255,255,255,0.1); border-radius: 8px;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #f39c12; margin-bottom: 20px;"></i>
+                    <h3>Content Load Error</h3>
+                    <p style="color: var(--text-muted);">Please verify the URL or go back to the portfolio home page to select another project.</p>
+                    <a href="../index.html" class="sidebar-btn sidebar-btn-primary" style="display: inline-flex; width: auto; margin-top: 15px;">Return to Home</a>
+                </div>
+            `;
+            // hide sidebar links
+            document.getElementById('github-btn').parentElement.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

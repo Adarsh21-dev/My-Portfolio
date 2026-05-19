@@ -1,10 +1,69 @@
+
+// Premium Toast Notification System
+class ToastNotification {
+    static init() {
+        let container = document.querySelector('.toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.className = 'toast-container';
+            document.body.appendChild(container);
+        }
+        this.container = container;
+    }
+
+    static show(title, message, type = 'success', duration = 5000) {
+        if (!this.container) {
+            this.init();
+        }
+
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        
+        let iconClass = 'fas fa-check-circle';
+        if (type === 'error') iconClass = 'fas fa-exclamation-circle';
+        if (type === 'info') iconClass = 'fas fa-info-circle';
+
+        toast.innerHTML = `
+            <div class="toast-icon">
+                <i class="${iconClass}"></i>
+            </div>
+            <div class="toast-content">
+                <div class="toast-title">${title}</div>
+                <div class="toast-message">${message}</div>
+            </div>
+            <button class="toast-close">&times;</button>
+        `;
+
+        this.container.appendChild(toast);
+
+        // Slide in animation
+        setTimeout(() => {
+            toast.classList.add('show');
+        }, 10);
+
+        const closeBtn = toast.querySelector('.toast-close');
+        const dismissToast = () => {
+            toast.classList.remove('show');
+            toast.addEventListener('transitionend', () => {
+                toast.remove();
+            });
+        };
+
+        closeBtn.addEventListener('click', dismissToast);
+
+        // Auto dismiss
+        if (duration > 0) {
+            setTimeout(dismissToast, duration);
+        }
+    }
+}
+
 // DOM Elements
 const navbar = document.querySelector('.navbar');
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navLinksItems = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section');
-const contactForm = document.querySelector('.contact-form');
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 const footer = document.querySelector('.footer');
 
@@ -99,23 +158,52 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleScrollToTopButton();
     }, 100);
 
-    // Contact form submission
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+
+    // Email link obfuscation handler to prevent scraping
+    const emailLink = document.getElementById('email-link');
+    if (emailLink) {
+        emailLink.addEventListener('click', function (e) {
             e.preventDefault();
+            // Dynamically construct email on click
+            const user = "adarshkumar9172641";
+            const domain = "gmail.com";
+            window.location.href = `mailto:${user}@${domain}`;
+        });
+    }
 
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+    // Desktop Mail Client Button Handler
+    const desktopMailBtn = document.getElementById('desktop-mail-btn');
+    if (desktopMailBtn) {
+        desktopMailBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const user = "adarshkumar9172641";
+            const domain = "gmail.com";
+            window.location.href = `mailto:${user}@${domain}?subject=Message%20from%20Portfolio`;
+        });
+    }
 
-            // Here you would typically send the form data to a server
-            // For demo purposes, we'll just show an alert
-            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-
-            // Reset form
-            this.reset();
+    // Copy Email Address Button Handler with Toast Feedback
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function () {
+            const user = "adarshkumar9172641";
+            const domain = "gmail.com";
+            const email = `${user}@${domain}`;
+            
+            navigator.clipboard.writeText(email).then(() => {
+                ToastNotification.show(
+                    "Email Copied!",
+                    "My email address has been copied to your clipboard.",
+                    "success"
+                );
+            }).catch(err => {
+                console.error("Failed to copy:", err);
+                ToastNotification.show(
+                    "Copy Failed",
+                    `Please copy manually: ${email}`,
+                    "error"
+                );
+            });
         });
     }
 

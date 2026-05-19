@@ -383,13 +383,20 @@ img {
     position: relative;
     height: 250px;
     overflow: hidden;
+    background-color: #161616; /* Premium dark background for contained images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Renders full image completely without cropping! */
     transition: transform 0.5s ease;
+    padding: 12px; /* Elegant breathing room for mockup screenshots */
 }
 
 .project-card:hover .project-overlay {
@@ -514,16 +521,20 @@ img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.tool-item i {
+.tool-item i, .tool-item svg {
     font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     color: var(--accent-color);
+    fill: var(--accent-color);
     transition: all 0.3s ease;
 }
 
-.tool-item:hover i {
+.tool-item:hover i, .tool-item:hover svg {
     filter: drop-shadow(0 0 8px var(--accent-color));
     transform: scale(1.1);
     color: #1ed6b1;
+    fill: #1ed6b1;
     /* Lighter teal color for glow effect */
 }
 
@@ -1628,4 +1639,237 @@ img {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--accent-color);
+}
+
+/* Premium Glassmorphic Toast Notification System */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
+    max-width: 420px;
+    pointer-events: auto;
+    transform: translateX(-120%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.toast-success .toast-icon {
+    background: rgba(26, 188, 156, 0.15);
+    color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(26, 188, 156, 0.2);
+}
+
+.toast-error .toast-icon {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.2);
+}
+
+.toast-info .toast-icon {
+    background: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.2);
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.toast-message {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    padding: 0;
+    align-self: flex-start;
+    margin-top: -2px;
+}
+
+.toast-close:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+    .toast-container {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+    
+    .toast {
+        min-width: 100%;
+    }
+}
+
+/* Premium Glassmorphic Connect Card */
+.direct-connect-card {
+    background: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.direct-connect-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(26, 188, 156, 0.1);
+}
+
+.direct-connect-card h3 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.direct-connect-card p.connect-desc {
+    color: #cccccc;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.connect-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.btn-gmail {
+    background: linear-gradient(135deg, #ea4335, #c5221f);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(234, 67, 53, 0.25);
+}
+
+.btn-gmail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(234, 67, 53, 0.4);
+    filter: brightness(1.1);
+}
+
+.btn-default-mail {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-default-mail:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-copy-email {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px dashed var(--accent-color);
+}
+
+.btn-copy-email:hover {
+    background: rgba(26, 188, 156, 0.08);
+    transform: translateY(-2px);
+}
+
+.connect-benefits {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+}
+
+.connect-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #bbbbbb;
+}
+
+.connect-benefits li i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 576px) {
+    .direct-connect-card {
+        padding: 25px;
+    }
 }
