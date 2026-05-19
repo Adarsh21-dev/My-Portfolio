@@ -25,3 +25,7 @@ This project uses a lightweight yet powerful stack to ensure responsiveness and 
 
 ---
 **Maintained by [Adarsh Kumar](https://github.com/Adarsh21-dev)**
+
+## 🆕 Recent Updates
+* **Resume Updated**: Replaced the old resume with the latest version (`adarsh_kumar_resume.pdf`).
+* **Project Descriptions**: Refined and professionalized bullet points for Jetpack Compose App, B2B Flask Backend, Interactive Portfolio, and Bulk File Rename System to better showcase technical skills on the resume.
