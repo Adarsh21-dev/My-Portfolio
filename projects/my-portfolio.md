@@ -5,9 +5,10 @@ date: May 18, 2026
 author: Adarsh Kumar
 status: Completed
 status_color: completed
-cover_image: ../assets/project1.png
+cover_image: ../assets/portofolio.png
 tools: ["HTML5", "Vanilla CSS3", "Vanilla JS (ES6+)", "Glassmorphism", "Responsive Grid Layouts"]
 github: https://github.com/Adarsh21-dev/My-Portfolio
+live_demo: https://adarsh21-dev-portfolio.onrender.com/
 playstore: N/A (Web Application)
 ---
 
@@ -56,3 +57,12 @@ The entire portfolio utilizes a custom-engineered responsive structure designed 
 *   **Fluid Timeline:** The experience chronologies slide dynamically on larger screens, adjusting into compact vertical layouts on tablet and mobile viewports.
 *   **Grid Scaling:** Project cards use custom autofit grids (`grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))`) to seamlessly scale columns without clipping or manual resizing.
 *   **Typography Hierarchy:** Font settings use scalable units (`rem`, `em`, `vh`) ensuring text remains readable and sharp on any resolution, from tiny mobile screens to large desktop monitors.
+
+---
+
+## 👨‍💻 5. About the Developer: Adarsh Kumar
+Behind this portfolio is **Adarsh Kumar**, a dedicated Android and Full-Stack Software Engineer with a deep passion for creating visual sanctuaries, low-latency architectures, and robust automation pipelines.
+
+*   **Focus & Expertise:** Specialized in high-performance Android development (Kotlin, Jetpack Compose, Room DB) and responsive, glassmorphism-based web frontends (HTML5, Vanilla CSS3, ES6+ JS).
+*   **Engineering Philosophy:** Strongly believes in zero-dependency, zero-overhead, and high-performance solutions. Whether building secure direct email copy suites or background spreadsheet polling scripts, my goal is to deliver clean, maintainable, and robust codebases.
+*   **Future Vision:** Constantly pushing boundaries to integrate advanced REST APIs, smooth micro-interactions, and professional UI layouts, turning creative ideas into scalable production products.

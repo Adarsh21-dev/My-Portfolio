@@ -431,6 +431,13 @@
                     </a>
                 </div>
 
+                <div class="sidebar-item" id="live-demo-container" style="display: none;">
+                    <div class="sidebar-label">Live Preview</div>
+                    <a href="#" target="_blank" class="sidebar-btn sidebar-btn-secondary" id="live-demo-btn" style="border-color: rgba(26,188,156,0.3); color: var(--accent-color);">
+                        <i class="fas fa-external-link-alt"></i> View Live Site
+                    </a>
+                </div>
+
                 <div class="sidebar-item" id="playstore-container" style="display: none;">
                     <div class="sidebar-label">Play Store</div>
                     <a href="#" target="_blank" class="sidebar-btn sidebar-btn-secondary" id="playstore-btn">
@@ -563,6 +570,14 @@
                 if (metadata.playstore && metadata.playstore.startsWith('http')) {
                     playstoreBtn.href = metadata.playstore;
                     playstoreContainer.style.display = 'block';
+                }
+
+                // Render Live Demo Link
+                const liveDemoContainer = document.getElementById('live-demo-container');
+                const liveDemoBtn = document.getElementById('live-demo-btn');
+                if (metadata.live_demo && metadata.live_demo.startsWith('http')) {
+                    liveDemoBtn.href = metadata.live_demo;
+                    liveDemoContainer.style.display = 'block';
                 }
 
                 // Convert markdown body to HTML and inject it
