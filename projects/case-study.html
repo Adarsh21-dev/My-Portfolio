@@ -550,7 +550,7 @@
 
                 // Render GitHub Link
                 const githubBtn = document.getElementById('github-btn');
-                if (metadata.github && metadata.github !== "N/A" && metadata.github !== "N/A (Desktop Application)") {
+                if (metadata.github && metadata.github.startsWith('http')) {
                     githubBtn.href = metadata.github;
                     githubBtn.style.display = 'flex';
                 } else {
@@ -560,7 +560,7 @@
                 // Render Play Store Link
                 const playstoreContainer = document.getElementById('playstore-container');
                 const playstoreBtn = document.getElementById('playstore-btn');
-                if (metadata.playstore && metadata.playstore !== "N/A" && metadata.playstore !== "N/A (Desktop Application)") {
+                if (metadata.playstore && metadata.playstore.startsWith('http')) {
                     playstoreBtn.href = metadata.playstore;
                     playstoreContainer.style.display = 'block';
                 }
