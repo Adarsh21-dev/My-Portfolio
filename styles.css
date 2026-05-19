@@ -425,11 +425,19 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     z-index: 5;
     /* Ensure overlay is above image */
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-y: auto;
+}
+
+.project-overlay::-webkit-scrollbar {
+    display: none;
+}
+.project-overlay {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .project-card:hover .project-overlay {

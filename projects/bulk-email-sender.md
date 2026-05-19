@@ -5,7 +5,7 @@ date: April 2025
 author: Adarsh Kumar
 status: Under Development
 status_color: progress
-cover_image: ../assets/project2.png
+cover_image: ../assets/project_15.png
 tools: ["Google Apps Script", "REST API", "Google Sheets", "MailApp", "Time-based Triggers"]
 github: https://github.com/Adarsh21-dev/Bulk-Email-Sender-V1.0
 playstore: N/A (Backend Automation)
