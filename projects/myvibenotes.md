@@ -7,7 +7,7 @@ status: Completed
 status_color: completed
 cover_image: ../assets/project1.png
 tools: ["Kotlin", "Jetpack Compose", "Room Persistence", "MVVM + Clean Architecture", "Glassmorphism"]
-github: https://github.com/Adarsh21-dev
+github: https://github.com/Adarsh21-dev/MyVibeNotes/tree/main
 playstore: N/A (Local First)
 ---
 
